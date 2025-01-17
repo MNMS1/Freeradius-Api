@@ -12,7 +12,7 @@ fi
 if [ "$1" = 'freeradius' ]; then
     shift
     ln -s /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/
-    exec freeradius -X "$@"
+    exec freeradius -f "$@"s
 fi
 
 # many people are likely to call "radiusd" as well, so allow that
