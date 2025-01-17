@@ -37,7 +37,7 @@ sql {
 	#	sqlite
 	#	mongo
 	#
-	dialect = $(DB_DIALECT)
+	dialect = $ENV{DB_DIALECT}
 
 	#
 	#  The driver module used to execute the queries.  Since we
@@ -165,10 +165,10 @@ sql {
 
 	# Connection info:
 	#
-	server = ${DB_HOST}
-	port = ${DB_PORT}
-	login = ${DB_USER}
-	password = ${DB_PASS}
+	server = $ENV{DB_HOST} 
+	port = $ENV{DB_PORT}
+	login = $ENV{DB_USER}
+	password =  $ENV{DB_PASS} 
 
 	# Connection info for Mongo
 	# Authentication Without SSL
@@ -183,7 +183,7 @@ sql {
 	# server = mongodb://<DERIVED USERNAME>@192.168.0.2:PORT/DATABASE?authSource=$external&ssl=true&authMechanism=MONGODB-X509
 
 	# Database table configuration for everything except Oracle
-	radius_db = ${DB_NAME}
+	radius_db =  $ENV{DB_NAME}  
 
 	# If you are using Oracle then use this instead
 #	radius_db = "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SID=your_sid)))"
